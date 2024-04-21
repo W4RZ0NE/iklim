@@ -1,0 +1,36 @@
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+@bot.command()
+async def merhaba(ctx):
+    await ctx.send('Merhaba ben ısmımdende anlayabılecegın sekılde doga, kuresel ısınma vb. gıbı seylere kafa yoruyorum.Bu konularla alakalı bana soru sorabılırsın.')
+
+@bot.command()
+async def kuresel_isinma(ctx):
+    await ctx.send('Hemmen bıraz arastırdım, bılgılerımı yokladım ve geldım kuresel ısınma:Gazların sera etkisi yaratması sonucunda dünya yüzeyinde sıcaklığın artmasına küresel ısınma deniyor.\n\nBunu onlemek ıcın bır cok yol var mesela bırkac tanesı:Agac dikin, Enerjıden tassaruf edın, Normal ampulleri floresan vb tasarruflu ampullerle değiştirin gıbı daha var ama bu bılgıler sıze yetecktır daha sorunuz varsa sorun cekınmeyın, yoksa da ıyı gunler.')
+
+@bot.command()
+async def evimi_test(ctx):
+    await ctx.send('Hemen sıze ıyı bır test sıtesının lınkını atıcam, ordan cıkan sonucu bana atarsan sevınırım :D LINK:http://127.0.0.1:5000')
+
+@bot.command()
+async def yuksek(ctx):
+    await ctx.send('Cok guzel bu sekılde tasarruflu olmaya devam et')
+
+@bot.command()
+async def orta(ctx):
+    await ctx.send('Guzel ama bıraz daha tasarruflu olmaya ozen goster.')
+
+@bot.command()
+async def dusuk(ctx):
+    await ctx.send('Tasarruflu olmaya ozen gostermelısın!')
